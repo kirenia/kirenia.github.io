@@ -18,20 +18,50 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: kirenia.github.io
+title: githugs(lol)
 email: githugs@proton.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Kire's personal site. Code, notes, and whatever else I'm building right now.
-baseurl: "/kirenia.github.io" # the subpath of your site, e.g. /blog
+  Code, notes, and whatever else I'm building right now.
+# the line in the footer's third column
+footer_quote: >-
+  We can restore the web as a tool for collaboration, creativity and
+  compassion across cultural borders.
+footer_quote_by: Tim Berners-Lee
+footer_quote_cite: "This Is for Everyone: The Unfinished Story of the World Wide Web"
+footer_quote_year: 2025
+baseurl: "" # user pages (kirenia.github.io) are served from the root
 url: "https://kirenia.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 instagram_username: githugs_
-github_username: kirenia
+bluesky_username: githugs.bsky.social
 
 # Build settings
-theme: minima
+# no theme gem: the layouts, includes and CSS in this repo are the theme.
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
+
+# Blog settings
+permalink: /:year/:month/:day/:title/
+
+# install scripts live in _scripts/ and get their own pages
+collections:
+  scripts:
+    output: true
+    permalink: /scripts/:name/
+excerpt_separator: "\n\n"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: scripts
+    values:
+      layout: script
 
 # Exclude from processing.
 # The following items will not be processed, by default.

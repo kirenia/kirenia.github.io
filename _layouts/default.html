@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#content">skip to content</a>
+  {% include header.html %}
+
+  <main class="wrap" id="content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script>
+    // anything pointing off this site opens in its own tab
+    (function () {
+      var links = document.querySelectorAll('a[href^="http"]');
+      for (var i = 0; i < links.length; i++) {
+        var a = links[i];
+        if (a.hostname === window.location.hostname || a.target) continue;
+        a.target = "_blank";
+        a.rel = (a.rel ? a.rel + " " : "") + "noopener noreferrer";
+      }
+    })();
+  </script>
+
+  <script>
+    // jack in to the terminal, jack out to daylight
+    (function () {
+      var btn = document.querySelector("[data-theme-toggle]");
+      if (!btn) return;
+      var root = document.documentElement;
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+      // no pick yet means we're riding the system setting
+      function isDark() {
+        return root.dataset.theme ? root.dataset.theme === "dark" : prefersDark.matches;
+      }
+
+      function label() {
+        var on = isDark();
+        btn.textContent = on ? "jack-out" : "jack-in";
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+        btn.setAttribute("aria-label", on ? "jack out to light mode" : "jack in to the terminal");
+      }
+
+      btn.addEventListener("click", function () {
+        var next = isDark() ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
+        label();
+      });
+
+      prefersDark.addEventListener("change", function () {
+        if (!root.dataset.theme) label();
+      });
+
+      label();
+    })();
+  </script>
+</body>
+</html>

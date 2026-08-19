@@ -1,0 +1,49 @@
+---
+layout: page
+title: tags
+permalink: /tags/
+sticker: pikmin
+---
+
+{%- comment -%}
+  posts can use `tags:` or `categories:` — both show up here.
+{%- endcomment -%}
+
+<ul class="tag-cloud">
+  {%- for tag in site.tags -%}
+    <li><a href="#{{ tag[0] | slugify }}">{{ tag[0] }} <span aria-hidden="true">·</span> {{ tag[1].size }}</a></li>
+  {%- endfor -%}
+  {%- for cat in site.categories -%}
+    {%- unless site.tags[cat[0]] -%}
+      <li><a href="#{{ cat[0] | slugify }}">{{ cat[0] }} <span aria-hidden="true">·</span> {{ cat[1].size }}</a></li>
+    {%- endunless -%}
+  {%- endfor -%}
+</ul>
+
+{%- for tag in site.tags -%}
+<section class="tag-group" id="{{ tag[0] | slugify }}">
+  <h2>{{ tag[0] }}</h2>
+  <ul>
+    {%- for post in tag[1] -%}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: "%b %-d, %Y" }}</small></li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endfor -%}
+
+{%- for cat in site.categories -%}
+  {%- unless site.tags[cat[0]] -%}
+<section class="tag-group" id="{{ cat[0] | slugify }}">
+  <h2>{{ cat[0] }}</h2>
+  <ul>
+    {%- for post in cat[1] -%}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: "%b %-d, %Y" }}</small></li>
+    {%- endfor -%}
+  </ul>
+</section>
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if site.tags.size == 0 and site.categories.size == 0 -%}
+<p>nothing tagged yet. add <code>tags: [thing, other-thing]</code> to a post's front matter.</p>
+{%- endif -%}

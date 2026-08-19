@@ -1,0 +1,18 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ '/' | relative_url }}"></data>
+
+  <div class="wrap footer-inner">
+    {%- if site.footer_quote -%}
+    <blockquote class="footer-quote">
+      <p>{{ site.footer_quote | escape }}</p>
+      <footer>{{ site.footer_quote_by | escape }}{% if site.footer_quote_cite %}, <cite>{{ site.footer_quote_cite | escape }}</cite>{% endif %}{% if site.footer_quote_year %} ({{ site.footer_quote_year }}){% endif %}</footer>
+    </blockquote>
+    {%- else -%}
+    <p>{{ site.description | escape }}</p>
+    {%- endif -%}
+
+    <div class="footer-social">
+      {% include social.html %}
+    </div>
+  </div>
+</footer>

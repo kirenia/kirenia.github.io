@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{%- if page.title or content != "" -%}
+<div class="page">
+  {%- if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif -%}
+  {{ content }}
+</div>
+{%- endif -%}
+
+<ul class="post-list">
+  {%- for post in site.posts -%}
+    {% include post-card.html post=post index=forloop.index0 %}
+  {%- endfor -%}
+</ul>
+
+{%- if site.posts.size == 0 -%}
+  <p>no posts yet. drop a markdown file in <code>_posts/</code>.</p>
+{%- endif -%}
