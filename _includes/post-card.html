@@ -6,7 +6,7 @@
   {%- if blurb %}<div class="card__excerpt">{{ blurb | strip_html | normalize_whitespace | truncatewords: 26 }}</div>{% endif -%}
 
   <div class="card__meta">
-    <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: "%b %-d, %Y" }}</time>
+    <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: "%-d %b %Y" }}</time>
     {%- assign topics = include.post.tags | concat: include.post.categories -%}
     {%- for t in topics -%}
       <a class="tag" href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">{{ t }}</a>

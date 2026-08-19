@@ -109,7 +109,7 @@ The deck is the hardware, but the soul lives on the SD card. Everything above is
 Each one is its own repo with a step-by-step readme. Read the install script before you run it — that's the whole point of it not being a mystery binary.
 </div>
 
-- [writerdeck](http://localhost:4000/scripts/writerdeck/) — focused writing app, no cloud
+- [writerdeck]({% link _scripts/writerdeck.md %}) — focused writing app, no cloud
 - **focusdeck** — coming soon
 - **stellardeck** — coming soon
 

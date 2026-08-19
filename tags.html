@@ -25,7 +25,7 @@ sticker: pikmin
   <h2>{{ tag[0] }}</h2>
   <ul>
     {%- for post in tag[1] -%}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: "%b %-d, %Y" }}</small></li>
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: "%-d %b %Y" }}</small></li>
     {%- endfor -%}
   </ul>
 </section>
@@ -37,7 +37,7 @@ sticker: pikmin
   <h2>{{ cat[0] }}</h2>
   <ul>
     {%- for post in cat[1] -%}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: "%b %-d, %Y" }}</small></li>
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <small>{{ post.date | date: "%-d %b %Y" }}</small></li>
     {%- endfor -%}
   </ul>
 </section>

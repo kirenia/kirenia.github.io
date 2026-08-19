@@ -37,7 +37,7 @@ So there's one hardware build for all of it — [the build guide]({% post_url 20
 
 Each deck flavor is its own code repository with documentation and an install script.
 
-- [writerdeck]({% link _scripts/writerdeck.md %} ) — focused writing app, no cloud
+- [writerdeck]({% link _scripts/writerdeck.md %}) — focused writing app, no cloud
 - **focusdeck** — coming soon
 - **stellardeck** — coming soon
 
