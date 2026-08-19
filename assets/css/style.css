@@ -591,7 +591,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .footer-quote footer {
   margin-top: 0.45rem;
-  font-family: var(--serif);
+  /* the credit line runs in inter; only the quote itself is serif */
+  font-family: var(--sans);
   font-size: 0.75rem;
   font-style: normal;
   line-height: 1.4;

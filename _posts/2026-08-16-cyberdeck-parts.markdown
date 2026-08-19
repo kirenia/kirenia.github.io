@@ -17,41 +17,41 @@ Buy from a shop in your own region if you can. The links below go to the maker o
 
 ## Parts List
 
-### Computer — from ~$17
+### Computer - from ~$17
 
 A Raspberry Pi, basically a credit-card-sized computer.
 
 - [Raspberry Pi 3 B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)\*
 - [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
 - [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-- [Orange Pi Zero 2W](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-Zero-2W.html) — pair with an HDMI screen
+- [Orange Pi Zero 2W](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-Zero-2W.html) - pair with an HDMI screen
 
-### Screen — from ~$15
+### Screen - from ~$15
 
 A small display that sits right on top of the Pi.
 
-- [Hosyond 3.5" SPI Touchscreen](https://www.amazon.com/Hosyond-480x320-Screen-Display-Raspberry/dp/B0BJDTL9J3)\* — Raspberry Pi only
+- [Hosyond 3.5" SPI Touchscreen](https://www.amazon.com/Hosyond-480x320-Screen-Display-Raspberry/dp/B0BJDTL9J3)\* - Raspberry Pi only
 - [Waveshare 3.5" HDMI Display](https://www.waveshare.com/3.5inch-hdmi-lcd-e.htm)
 - [Waveshare 5" HDMI Display](https://www.waveshare.com/5inch-hdmi-lcd-h.htm)
 
-### Memory Card — from ~$9
+### Memory Card - from ~$9
 
 A microSD card is the deck's storage, like a tiny hard drive.
 
 - [SanDisk Ultra 32GB](https://www.amazon.com/SanDisk-Ultra-microSDHC-Memory-Adapter/dp/B08GY9NYRM)\*
 - [SanDisk Ultra 64GB](https://www.amazon.com/SanDisk-Ultra-microSDXC-Memory-Adapter/dp/B0B7NXBM6P)
-- [SanDisk Ultra 64GB (2-Pack)](https://www.amazon.com/SanDisk-2-Pack-microSDXC-Memory-Adapter/dp/B0B7NVMBPL) — one card per deck soul
+- [SanDisk Ultra 64GB (2-Pack)](https://www.amazon.com/SanDisk-2-Pack-microSDXC-Memory-Adapter/dp/B0B7NVMBPL) - one card per deck soul
 
-### Keyboard — from $0
+### Keyboard - from $0
 
 Important for setup, optional after that.
 
 - [Miritz Mini Bluetooth Keyboard + Touchpad](https://www.amazon.com/dp/B0FVFM1NNZ)\*
 - [Rii i8 Mini Wireless Keyboard + Touchpad](https://www.amazon.com/Rii-Keyboard-Control-Touchpad-Android/dp/B00JO80LUI)
 - [Samsers Foldable Bluetooth Keyboard + Touchpad](https://www.amazon.com/Foldable-Bluetooth-Keyboard-Touchpad-Rechargeable/dp/B07XMM1XJV)
-- No keyboard at all — control it from your laptop instead.
+- No keyboard at all - control it from your laptop instead.
 
-### Power Source — from ~$10
+### Power Source - from ~$10
 
 Wall power to start with, a battery when you want to cut the cord.
 
@@ -70,9 +70,9 @@ Search the same part names at whichever of these ships to you. Local first, alwa
 - [Adafruit](https://www.adafruit.com)
 - [SparkFun](https://www.sparkfun.com)
 - [PiShop.us](https://www.pishop.us)
-- [Micro Center](https://www.microcenter.com) — in-store pickup nearby
-- [DigiKey](https://www.digikey.com) — components & connectors
-- [Mouser](https://www.mouser.com) — components & connectors
+- [Micro Center](https://www.microcenter.com) - in-store pickup nearby
+- [DigiKey](https://www.digikey.com) - components & connectors
+- [Mouser](https://www.mouser.com) - components & connectors
 
 ### Canada
 
@@ -86,9 +86,9 @@ Search the same part names at whichever of these ships to you. Local first, alwa
 
 ### Europe
 
-- [BerryBase](https://www.berrybase.de) — Germany
-- [Kubii](https://www.kubii.com) — France
-- [Melopero](https://www.melopero.com) — Italy
+- [BerryBase](https://www.berrybase.de) - Germany
+- [Kubii](https://www.kubii.com) - France
+- [Melopero](https://www.melopero.com) - Italy
 
 ### Australia & New Zealand
 
@@ -100,7 +100,7 @@ Search the same part names at whichever of these ships to you. Local first, alwa
 - [Waveshare](https://www.waveshare.com)
 - [Seeed Studio](https://www.seeedstudio.com)
 - [Tindie](https://www.tindie.com)
-- [AliExpress](https://www.aliexpress.com) — cheapest, check reviews
+- [AliExpress](https://www.aliexpress.com) - cheapest, check reviews
 
 ## Next
 

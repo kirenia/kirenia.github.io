@@ -62,7 +62,7 @@ The first time it boots, that file will just say:
 
 ## If the Text Is Too Small or Too Big
 
-Open the file called `.writerdeck.conf` (it's hidden, so you may need to turn on "show hidden files" if you're browsing from another computer). Change the number next to `SCALE=` — bigger number, bigger text — then restart the deck.
+Open the file called `.writerdeck.conf` (it's hidden, so you may need to turn on "show hidden files" if you're browsing from another computer). Change the number next to `SCALE=` - bigger number, bigger text - then restart the deck.
 
 ---
 

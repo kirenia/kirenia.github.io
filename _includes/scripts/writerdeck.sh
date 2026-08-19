@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# writerdeck install.sh — githugs.lol
+# writerdeck install.sh - githugs.lol
 # run me on a fresh Raspberry Pi OS Lite:
 #   curl -sSL https://githugs.lol/scripts/writerdeck.sh | bash
 #
@@ -17,7 +17,7 @@ MARK_B="# <<< writerdeck <<<"
 say() { printf '\n\033[1m%s\033[0m\n' "$*"; }
 
 # ---------- screen size ----------
-# can't auto-detect this — cheap panels lie in their EDID (mine claims 720p, it's 3.5 inches).
+# can't auto-detect this - cheap panels lie in their EDID (mine claims 720p, it's 3.5 inches).
 # so I just ask. humans know what they bought.
 SCALE="1.5"
 if [ -e /dev/tty ]; then
@@ -38,7 +38,7 @@ fi
 say "Installing FocusWriter..."
 sudo apt-get update
 if ! sudo apt-get install -y focuswriter cage hunspell-de-de; then
-  say "Package hiccup — refreshing lists and retrying once..."
+  say "Package hiccup - refreshing lists and retrying once..."
   sudo apt-get update
   sudo apt-get install -y focuswriter cage hunspell-de-de
 fi
@@ -53,7 +53,7 @@ fi
 # ---------- config ----------
 # one file, one number. "text too big?" support answer = edit SCALE here, reboot.
 cat > "$CONF" << EOF
-# writerdeck config — edit and reboot
+# writerdeck config - edit and reboot
 SCALE=$SCALE
 EOF
 

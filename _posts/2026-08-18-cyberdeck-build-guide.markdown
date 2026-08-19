@@ -3,7 +3,7 @@ layout: post
 title: "Cyberdeck Build Guide"
 date: 2026-08-18 10:00:00 -0600
 description: "The base build every cyberdeck here starts from. What to buy, how to flash it, and common troubleshooting steps."
-tags: [cyberdecks, guide]
+tags: [cyberdecks, guides]
 sticker: lucky
 redirect_from:
   - /cyberdecks/guide.html
@@ -12,7 +12,7 @@ redirect_from:
 Free guide (woohoo). Takes about an hour if nothing fights you.
 
 <div class="note" markdown="1">
-You'll need the hardware from the [parts list]({% post_url 2026-08-16-cyberdeck-parts %}) and a laptop on the same wifi. This page is the hardware; the software that makes it a *deck* is the last step. No coding experience needed — you'll be copying and pasting.
+You'll need the hardware from the [parts list]({% post_url 2026-08-16-cyberdeck-parts %}) and a laptop on the same wifi. This page is the hardware; the software that makes it a *deck* is the last step. No coding experience needed - you'll be copying and pasting.
 </div>
 
 1. [Flash the OS](#flash)
@@ -35,11 +35,11 @@ Heads up: flashing **erases the card**, so use a blank one or copy anything off 
 
 Before you hit write, click the settings gear (the cog icon, sometimes labelled "Edit Settings") and set:
 
-- a **username** — lowercase, no spaces (like `kire`)
-- a **hostname** you'll remember — mine is the deck's name (like `writerdeck`). You'll use this to connect in the next step.
+- a **username** - lowercase, no spaces (like `kire`)
+- a **hostname** you'll remember - mine is the deck's name (like `writerdeck`). You'll use this to connect in the next step.
 - your **wifi** network and password
 - tick the box to **enable SSH**
-- leave **Enable Raspberry Pi Connect** switched off — it's a remote-access service you'd sign into, and you don't need it when you're reaching the Pi over SSH on your own wifi
+- leave **Enable Raspberry Pi Connect** switched off - it's a remote-access service you'd sign into, and you don't need it when you're reaching the Pi over SSH on your own wifi
 
 Setting all this now is why you never have to plug the Pi into a monitor or keyboard to get started.
 
@@ -55,7 +55,7 @@ The first boot does two or three minutes of invisible setup work. Then, from you
 ssh username@hostname.local
 ```
 
-The first time, it'll ask if you're sure you want to connect — type `yes`. Then it asks for the password you set. If you see a terminal prompt afterwards, you're in. You now own a computer you can talk to.
+The first time, it'll ask if you're sure you want to connect - type `yes`. Then it asks for the password you set. If you see a terminal prompt afterwards, you're in. You now own a computer you can talk to.
 
 <div class="note" markdown="1">
 **"Connection refused"?** Good news, weirdly. That means the Pi is on the network and just isn't done setting up. Wait another minute and try again. If the name won't resolve at all, find the Pi's IP address in your router's device list and use that instead: `ssh username@192.168.1.xxx`.
@@ -67,7 +67,7 @@ The first time, it'll ask if you're sure you want to connect — type `yes`. The
 
 Two kinds of small screen, two paths.
 
-**HDMI screens just work.** Plug it in before you power on and the Pi finds it — nothing to install or configure. This is the path I recommend for every new build.
+**HDMI screens just work.** Plug it in before you power on and the Pi finds it - nothing to install or configure. This is the path I recommend for every new build.
 
 **SPI screens** (the ones that mount on the GPIO pins, like the Hosyond 3.5") are slower and need a driver installed once. Paste these lines one at a time:
 
@@ -103,14 +103,14 @@ The stuff no tutorial warned me about.
 
 The deck is the hardware, but the soul lives on the SD card. Everything above is the same for every deck here; the software you install last is what decides what it becomes.
 
-**You're not done yet — this is the fun part.** Pick one below and follow its instructions; that's where your deck actually comes to life.
+**You're not done yet - this is the fun part.** Pick one below and follow its instructions; that's where your deck actually comes to life.
 
 <div class="note" markdown="1">
-Each one is its own repo with a step-by-step readme. Read the install script before you run it — that's the whole point of it not being a mystery binary.
+Each one is its own repo with a step-by-step readme. Read the install script before you run it - that's the whole point of it not being a mystery binary.
 </div>
 
-- [writerdeck]({% link _scripts/writerdeck.md %}) — focused writing app, no cloud
-- **focusdeck** — coming soon
-- **stellardeck** — coming soon
+- [writerdeck]({% link _scripts/writerdeck.md %}) - focused writing app, no cloud
+- **focusdeck** - coming soon
+- **stellardeck** - coming soon
 
 Before the software goes on, set up the rest of the hardware: to start, plug in a normal USB keyboard (Bluetooth pairing comes later, on the deck's own page). [Add the PiSugar battery](https://docs.pisugar.com/docs/product-wiki/battery/pisugar3/pisugar-3-series) to cut the cord, swap in your own colors, put it in a cool case. It's your deck now. Share your build with me if you'd like!

@@ -29,7 +29,7 @@ There is no official spec. If you built it and it computes, it counts. Most deck
 
 The deck is the hardware, but the soul lives on the SD card. Flash a different card, boot the same machine, and it's a different device entirely. A writing machine. A music terminal. A star atlas. Keep a stack of cards and one deck becomes many.
 
-So there's one hardware build for all of it — [the build guide]({% post_url 2026-08-18-cyberdeck-build-guide %}) — and then the software you put on top decides what the deck is.
+So there's one hardware build for all of it - [the build guide]({% post_url 2026-08-18-cyberdeck-build-guide %}) - and then the software you put on top decides what the deck is.
 
 </div>
 
@@ -37,8 +37,8 @@ So there's one hardware build for all of it — [the build guide]({% post_url 20
 
 Each deck flavor is its own code repository with documentation and an install script.
 
-- [writerdeck]({% link _scripts/writerdeck.md %}) — focused writing app, no cloud
-- **focusdeck** — coming soon
-- **stellardeck** — coming soon
+- [writerdeck]({% link _scripts/writerdeck.md %}) - focused writing app, no cloud
+- **focusdeck** - coming soon
+- **stellardeck** - coming soon
 
 If this helped, consider [buying me a coffee](https://ko-fi.com/githugs). It keeps me going <3
