@@ -83,13 +83,49 @@
 /* a picked theme beats the system one */
 :root[data-theme="light"] { color-scheme: light; }
 
+/* light-dark() is the whole palette, so anything that cannot parse it would
+   lose every colour at once. those engines (safari < 17.5, chrome < 123,
+   firefox < 120) get the light theme spelled out instead. */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --drac-bg: #f9f5ff;
+    --drac-fg: #282a36;
+    --drac-comment: #6070a1;
+    --drac-orange: #a06315;
+    --drac-yellow: #7e7203;
+    --drac-green: #1c832d;
+    --drac-purple: #7c4dbd;
+    --drac-cyan: #157c92;
+    --drac-pink: #b74a86;
+    --drac-red: #c33027;
+
+    --line: #e4dcf2;
+    --link: #7c4dbd;
+    --card-bg: #ffffff;
+    --card-edge: #282a36;
+    --code-bg: #efe7fb;
+    --pre-bg: #efe7fb;
+    --pre-fg: #282a36;
+    --sticker-shadow: rgba(0, 0, 0, 0.25);
+  }
+
+  .card,
+  .note {
+    border-color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+
+  .card:hover,
+  .card:focus-within { box-shadow: 7px 7px 0 var(--ink); }
+}
+
 /* base ---------------------------------------------------------------- */
 
 * { box-sizing: border-box; }
 
 html {
   /* everything is sized in rem, so this one dial scales the whole site */
-  font-size: 94%;
+  font-size: 90%;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
@@ -520,43 +556,47 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .footer-quote {
   position: relative;
-  flex: 1 1 22rem;
-  max-width: 32rem;
+  flex: 1 1 20rem;
+  max-width: 28rem;
   margin: 0;
-  padding-left: 2.25rem;
+  padding-left: 1.6rem;
   border: 0;
   --serif: ui-serif, "Iowan Old Style", Georgia, Palatino, serif;
 }
 
-/* a big soft quotation mark instead of a rule down the side */
+/* a small soft quotation mark instead of a rule down the side */
 .footer-quote::before {
   content: "\201C";
   position: absolute;
   left: 0;
-  top: 0.35rem;
+  top: 0.3rem;
   font-family: var(--serif);
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1;
   color: var(--accent);
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .footer-quote p {
   margin: 0;
-  font-family: var(--serif);
+  /* a serif that actually ships a light weight — the system stack has none,
+     so font-weight: 300 alone would render identically to 400 */
+  font-family: "Cormorant Garamond", var(--serif);
   font-size: 1.05rem;
   font-style: italic;
+  font-weight: 300;
   line-height: 1.5;
-  color: var(--fg);
+  color: var(--dim);
 }
 
 .footer-quote footer {
-  margin-top: 0.65rem;
+  margin-top: 0.45rem;
   font-family: var(--serif);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-style: normal;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--dim);
+  opacity: 0.8;
 }
 
 .footer-quote footer::before { content: "\2014\00a0"; }

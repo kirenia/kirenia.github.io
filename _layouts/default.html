@@ -53,9 +53,16 @@
         label();
       });
 
-      prefersDark.addEventListener("change", function () {
+      function onSchemeChange() {
         if (!root.dataset.theme) label();
-      });
+      }
+
+      // addListener is the pre-2020 safari spelling
+      if (prefersDark.addEventListener) {
+        prefersDark.addEventListener("change", onSchemeChange);
+      } else if (prefersDark.addListener) {
+        prefersDark.addListener(onSchemeChange);
+      }
 
       label();
     })();

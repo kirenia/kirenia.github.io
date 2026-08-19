@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg">
+<!-- icon sprite, inlined: safari will not follow a <use> reference
+     into an external svg file, so the symbols have to live in the page -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
 
 <!-- social icons from the minima theme (MIT), trimmed to the ones this site uses -->
 

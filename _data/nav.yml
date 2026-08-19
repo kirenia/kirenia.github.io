@@ -1,8 +1,6 @@
 # edit this list to change the top nav. `url` is relative to the site root.
 - title: home
   url: /
-- title: tags
-  url: /tags/
 - title: scripts
   url: /scripts/
 - title: about
