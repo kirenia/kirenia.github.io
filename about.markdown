@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-<p class="subtitle">dev, mami, carbon-based life form</p>
+<p class="subtitle">software engineer, solo mom, and lover of oatmilk lattes</p>
 
 This is where I keep code, notes, and whatever I'm building right now. The recurring bit is something I coined as "cyberpunkology"..a novel from the 1960s says something uncomfortably true about right now, I go find the receipt, take notes and talk about it.
 
@@ -22,4 +22,3 @@ Want to build something together or just say hi? I'm [githugs@proton.me](mailto:
 </div>
 
 <p class="colophon">built on a hand-rolled jekyll theme that started life as minima, wearing dracula colors, with stickers from my real life.</p>
-
