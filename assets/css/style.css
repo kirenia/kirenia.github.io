@@ -1,6 +1,6 @@
 /* ==========================================================================
    kire.css — simple in the light, terminal in the dark.
-   light: Inter, paper, soft colour blocks.
+   light: Fira Sans, paper, soft colour blocks.
    dark:  Fira Code, Dracula, everything is a terminal.
    ========================================================================== */
 
@@ -15,6 +15,9 @@
   --drac-bg:      light-dark(#f9f5ff, #282a36);
   --drac-fg:      light-dark(#282a36, #f8f8f2);
   --drac-comment: light-dark(#6070a1, #6272a4);
+  /* dracula's comment blue is only 3.03:1 on the dark bg — fine for the card
+     edge it draws, short of WCAG AA (4.5:1) for text. text uses a lifted one. */
+  --drac-comment-text: light-dark(#6070a1, #8995bb);
   --drac-orange:  light-dark(#a06315, #ffb86c);
   --drac-yellow:  light-dark(#7e7203, #f1fa8c);
   --drac-green:   light-dark(#1c832d, #50fa7b);
@@ -28,7 +31,7 @@
 
   --bg: var(--drac-bg);
   --fg: var(--drac-fg);
-  --dim: var(--drac-comment);
+  --dim: var(--drac-comment-text);
   --line: light-dark(#e4dcf2, #44475a);
   --accent: var(--drac-purple);
   --link: light-dark(var(--drac-purple), var(--drac-cyan));
@@ -47,7 +50,7 @@
 
   --sticker-shadow: light-dark(rgba(0, 0, 0, 0.25), #191a21);
 
-  --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Fira Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* light: plain and papery */
@@ -57,6 +60,20 @@
   --prompt: "";
   --cursor: none;
 
+  /* type scale — 16px base, 1.25 ratio. WCAG sets no minimum font size; what
+     it constrains is contrast at a given size (1.4.3), resize to 200% (1.4.4)
+     and spacing overrides (1.4.12) — so every step is rem and the root below
+     stays at the reader's own browser default. */
+  --fs-micro: 0.6875rem;   /* 11px — uppercase micro-labels: card meta, nav, toggle */
+  --fs-caption: 0.875rem;  /* 14px — meta, nav, footer, captions */
+  --fs-body: 1rem;         /* 16px — body copy and notes */
+  --fs-lead: 1.125rem;     /* 18px — subtitles, lead-ins */
+  --fs-h3: 1.25rem;        /* 20px */
+  --fs-h2: 1.5rem;         /* 24px — WCAG's "large text" threshold */
+  --fs-h1: 2rem;           /* 32px */
+
+  /* one width for the whole site — .wrap derives from this, so header,
+     content and footer all share the same two edges */
   --measure: 44rem;
 }
 
@@ -91,6 +108,7 @@
     --drac-bg: #f9f5ff;
     --drac-fg: #282a36;
     --drac-comment: #6070a1;
+    --drac-comment-text: #6070a1;
     --drac-orange: #a06315;
     --drac-yellow: #7e7203;
     --drac-green: #1c832d;
@@ -125,7 +143,7 @@
 
 html {
   /* everything is sized in rem, so this one dial scales the whole site */
-  font-size: 90%;
+  font-size: 100%;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
@@ -137,7 +155,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--body-font);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
 }
 
@@ -152,9 +170,9 @@ h1, h2, h3, h4 {
   margin: 2rem 0 0.75rem;
 }
 
-h1 { font-size: 1.9rem; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.15rem; }
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
 
 a {
   color: var(--link);
@@ -190,7 +208,7 @@ pre {
   border-left: 2px solid var(--accent);
 }
 
-pre code { background: none; color: inherit; padding: 0; font-size: 0.875rem; }
+pre code { background: none; color: inherit; padding: 0; font-size: var(--fs-caption); }
 
 blockquote {
   margin: 2rem 0;
@@ -207,7 +225,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 /* layout -------------------------------------------------------------- */
 
 .wrap {
-  width: min(100% - 2.5rem, 52rem);
+  width: min(100% - 2.5rem, var(--measure));
   margin-inline: auto;
 }
 
@@ -235,8 +253,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 }
 
 .site-title {
-  font-family: var(--mono);
-  font-size: 1.05rem;
+  font-family: var(--head-font);
+  font-size: var(--fs-h3);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--fg);
@@ -260,8 +278,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   flex-wrap: wrap;
   align-items: baseline;
   gap: 1rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-micro);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -279,8 +297,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .theme-toggle {
   font: inherit;
-  font-family: var(--mono);
-  font-size: 0.8rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-micro);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.5;
@@ -338,8 +356,10 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .card__title {
   margin: 0 0 0.4rem;
-  font-size: 1.35rem;
+  font-size: var(--fs-h3);
   line-height: 1.3;
+  /* titles are Title Case in the front matter; the cards wear them lowercase */
+  text-transform: lowercase;
 }
 
 .card__title a { color: inherit; }
@@ -362,9 +382,9 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 0.85rem;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-family: var(--body-font);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--card-fg);
   opacity: 0.7;
@@ -376,7 +396,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   color: inherit;
   text-decoration: none;
   border: 1px solid currentColor;
-  padding: 0 0.35rem;
+  padding: 0 0.28rem;
 }
 
 .tag:hover { color: var(--accent); }
@@ -390,7 +410,11 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 @media (max-width: 34rem) {
   .card { padding: 1.15rem 1.25rem; box-shadow: var(--shadow-sm); }
-  .card__title { font-size: 1.15rem; }
+  .card__title { font-size: var(--fs-lead); }
+  /* the excerpt is body-sized elsewhere; on a narrow card it steps down */
+  .card__excerpt { font-size: var(--fs-caption); }
+  /* the #tag headings run long; one step down keeps them off two lines */
+  .tag-group h2 { font-size: var(--fs-h3); }
 }
 
 /* note / callout box -------------------------------------------------- */
@@ -398,6 +422,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .note {
   --c: var(--drac-purple);
   clear: both;
+  font-size: var(--fs-body);
   margin: 2rem 0;
   padding: 1rem 1.15rem;
   background: color-mix(in srgb, var(--c) var(--card-tint), var(--card-bg));
@@ -425,7 +450,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .subtitle {
   margin-top: -0.5rem;
-  font-size: 1rem;
+  font-size: var(--fs-lead);
   color: var(--dim);
 }
 
@@ -435,8 +460,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   align-items: center;
   gap: 0.5rem 0.85rem;
   margin-bottom: 2rem;
-  font-family: var(--mono);
-  font-size: 0.78rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--dim);
@@ -448,9 +473,9 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .signature {
   clear: none;
   margin-top: 1.5rem;
-  font-family: ui-serif, "Iowan Old Style", Georgia, Palatino, serif;
+  font-family: var(--body-font);
   font-style: italic;
-  font-size: 1.35rem;
+  font-size: var(--fs-h3);
   line-height: 1.3;
   color: var(--accent);
 }
@@ -459,8 +484,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .colophon {
   max-width: var(--measure);
   margin-top: 0.9rem;
-  font-family: var(--mono);
-  font-size: 0.78rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
   line-height: 1.6;
   color: var(--dim);
 }
@@ -472,8 +497,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 0.85rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
 }
 
 /* tag index ----------------------------------------------------------- */
@@ -485,8 +510,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   margin-bottom: 2.5rem;
   padding: 0;
   list-style: none;
-  font-family: var(--mono);
-  font-size: 0.85rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
 }
 
 .tag-cloud a {
@@ -504,8 +529,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .tag-group { margin-bottom: 2.5rem; }
 
 .tag-group h2 {
-  font-family: var(--mono);
-  font-size: 1rem;
+  font-family: var(--head-font);
+  font-size: var(--fs-h2);
   letter-spacing: 0.04em;
 }
 
@@ -551,10 +576,23 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   border-top: 1px solid var(--line);
   margin-top: 4rem;
   padding: 2rem 0 3rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
   color: var(--dim);
 }
+
+/* the omg.lol status line — one ambient line above the footer proper */
+.footer-status {
+  margin: 0 auto 1.5rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
+  line-height: 1.6;
+  color: var(--dim);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.footer-status[hidden] { display: none; }
 
 .footer-inner {
   display: flex;
@@ -566,12 +604,11 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .footer-quote {
   position: relative;
-  flex: 1 1 20rem;
-  max-width: 28rem;
+  /* two shares of the row to the socials' one */
+  flex: 2 1 0;
   margin: 0;
   padding-left: 1.6rem;
   border: 0;
-  --serif: ui-serif, "Iowan Old Style", Georgia, Palatino, serif;
 }
 
 /* a small soft quotation mark instead of a rule down the side */
@@ -580,7 +617,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   position: absolute;
   left: 0;
   top: 0.3rem;
-  font-family: var(--serif);
+  font-family: var(--body-font);
   font-size: 2rem;
   line-height: 1;
   color: var(--accent);
@@ -589,10 +626,11 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .footer-quote p {
   margin: 0;
-  /* a serif that actually ships a light weight — the system stack has none,
-     so font-weight: 300 alone would render identically to 400 */
-  font-family: "Cormorant Garamond", var(--serif);
-  font-size: 1.05rem;
+  /* follows the theme; inter's real italic comes from the ital axis
+     requested in head.html, without which the browser would fake the slant */
+  font-family: var(--body-font);
+  /* same size as body copy */
+  font-size: var(--fs-body);
   font-style: italic;
   font-weight: 300;
   line-height: 1.5;
@@ -602,8 +640,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .footer-quote footer {
   margin-top: 0.45rem;
   /* the credit line runs in inter; only the quote itself is serif */
-  font-family: var(--sans);
-  font-size: 0.75rem;
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
   font-style: normal;
   line-height: 1.4;
   color: var(--dim);
@@ -616,7 +654,10 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 /* socials, tucked to the right */
 .footer-social {
   display: flex;
+  flex: 1 1 0;
   align-items: center;
+  /* the icons only need ~180px, so keep them tucked to the far edge of the third */
+  justify-content: flex-end;
   gap: 1.25rem;
 }
 
@@ -662,7 +703,9 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 @media (max-width: 40rem) {
   .footer-inner { flex-direction: column; align-items: flex-start; }
   /* flex-basis means height once the row turns into a column */
-  .footer-quote { flex: 0 1 auto; }
+  .footer-quote,
+  .footer-social { flex: 0 1 auto; }
+  .footer-social { justify-content: flex-start; }
 }
 
 /* syntax highlighting (rouge) — dracula tokens, both themes ------------ */
@@ -678,7 +721,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .highlighter-rouge > .highlight > pre { border-left: 0; }
 
-.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cd { color: var(--drac-comment); font-style: italic; }
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cd { color: var(--drac-comment-text); font-style: italic; }
 .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kc,
 .highlight .o, .highlight .ow { color: var(--drac-pink); }
 .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .se,

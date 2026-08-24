@@ -36,6 +36,9 @@ instagram_username: githugs_
 bluesky_username: githugs.bsky.social
 mastodon_username: githugs
 
+# the footer status line is pulled live from this omg.lol address
+omg_address: kire
+
 # Build settings
 # no theme gem: the layouts, includes and CSS in this repo are the theme.
 plugins:
