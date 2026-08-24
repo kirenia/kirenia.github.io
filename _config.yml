@@ -34,6 +34,7 @@ url: "https://kirenia.github.io" # the base hostname & protocol for your site, e
 
 instagram_username: githugs_
 bluesky_username: githugs.bsky.social
+mastodon_username: githugs
 
 # Build settings
 # no theme gem: the layouts, includes and CSS in this repo are the theme.

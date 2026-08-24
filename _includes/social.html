@@ -1,15 +1,53 @@
 <ul class="social-media-list">
-  {%- if site.github_username -%}
-  <li><a href="https://github.com/{{ site.github_username | cgi_escape | escape }}" title="github" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use href="#github"></use></svg><span class="username">{{ site.github_username | escape }}</span></a></li>
-  {%- endif -%}
   {%- if site.instagram_username -%}
-  <li><a href="https://instagram.com/{{ site.instagram_username | cgi_escape | escape }}" rel="me noopener noreferrer" title="instagram" target="_blank"><svg class="svg-icon"><use href="#instagram"></use></svg><span class="username">{{ site.instagram_username | escape }}</span></a></li>
+  <li>
+    <a
+      href="https://instagram.com/{{ site.instagram_username | cgi_escape | escape }}"
+      rel="me noopener noreferrer"
+      title="instagram"
+      target="_blank"
+      ><svg class="svg-icon"><use href="#instagram"></use></svg
+      ><span class="username">{{ site.instagram_username | escape }}</span></a
+    >
+  </li>
+  {%- endif -%} {%- if site.bluesky_username -%}
+  <li>
+    <a
+      href="https://bsky.app/profile/{{ site.bluesky_username | cgi_escape | escape }}"
+      rel="me noopener noreferrer"
+      title="bluesky"
+      target="_blank"
+      ><svg class="svg-icon"><use href="#bluesky"></use></svg
+      ><span class="username">{{ site.bluesky_username | escape }}</span></a
+    >
+  </li>
+  {%- endif -%} {%- if site.mastodon_username -%}
+  <li>
+    <a
+      href="https://mastodon.social/@{{ site.mastodon_username | cgi_escape | escape }}"
+      rel="me noopener noreferrer"
+      title="mastodon"
+      target="_blank"
+      ><svg class="svg-icon"><use href="#mastodon"></use></svg
+      ><span class="username">{{ site.mastodon_username | escape }}</span></a
+    >
+  </li>
+  {%- endif -%} {%- if site.email -%}
+  <li>
+    <a class="u-email" href="mailto:{{ site.email }}" title="email"
+      ><svg class="svg-icon"><use href="#envelope"></use></svg
+      ><span class="username">email</span></a
+    >
+  </li>
   {%- endif -%}
-  {%- if site.bluesky_username -%}
-  <li><a href="https://bsky.app/profile/{{ site.bluesky_username | cgi_escape | escape }}" rel="me noopener noreferrer" title="bluesky" target="_blank"><svg class="svg-icon"><use href="#bluesky"></use></svg><span class="username">{{ site.bluesky_username | escape }}</span></a></li>
-  {%- endif -%}
-  {%- if site.email -%}
-  <li><a class="u-email" href="mailto:{{ site.email }}" title="email"><svg class="svg-icon"><use href="#envelope"></use></svg><span class="username">email</span></a></li>
-  {%- endif -%}
-  <li><a href="{{ '/feed.xml' | relative_url }}" title="rss" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use href="#rss"></use></svg><span class="username">rss</span></a></li>
+  <li>
+    <a
+      href="{{ '/feed.xml' | relative_url }}"
+      title="rss"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><svg class="svg-icon"><use href="#rss"></use></svg
+      ><span class="username">rss</span></a
+    >
+  </li>
 </ul>

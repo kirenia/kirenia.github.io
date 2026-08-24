@@ -20,3 +20,6 @@ I also write about the dev side of things. It's a field that never stops moving,
 <div class="note" markdown="1">
 Want to build something together or just say hi? I'm [githugs@proton.me](mailto:githugs@proton.me), and I love seeing what people make.
 </div>
+
+<p class="colophon">built on a hand-rolled jekyll theme that started life as minima, wearing dracula colors, with stickers from my real life.</p>
+
