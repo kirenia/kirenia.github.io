@@ -3,8 +3,6 @@ layout: page
 title: hi, i'm kire
 permalink: /about/
 sticker: overalls
-redirect_from:
-  - /about.html
 ---
 
 <p class="subtitle">software engineer, solo mom, and lover of oatmilk lattes</p>
