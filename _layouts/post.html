@@ -12,13 +12,30 @@ layout: default
     {%- endfor -%}
   </div>
 
-  {%- if page.sticker -%}
-    {% include sticker.html name=page.sticker class="sticker--right" tilt=page.sticker_tilt %}
-  {%- endif -%}
-
   <div class="post-content">
-    {{ content }}
+    {%- if page.sticker and content contains "</p>" -%}
+      {%- assign _first = content | split: "</p>" | first | append: "</p>" -%}
+      {{ _first }}
+      {% include sticker.html name=page.sticker class="sticker--right" tilt=page.sticker_tilt %}
+      {{ content | remove_first: _first }}
+    {%- else -%}
+      {%- if page.sticker -%}
+        {% include sticker.html name=page.sticker class="sticker--right" tilt=page.sticker_tilt %}
+      {%- endif -%}
+      {{ content }}
+    {%- endif -%}
   </div>
+
+  {%- if site.repo_url -%}
+  <aside class="post-edit">
+    <p>
+      <a href="{{ site.repo_url }}/edit/{{ site.repo_branch | default: 'main' }}/{{ page.path }}">Edit this post on GitHub</a>
+      to send a correction, or
+      <a href="{{ site.repo_url }}/issues/new?title={{ page.title | uri_escape }}">open an issue</a>
+      if you would rather just tell me about it.
+    </p>
+  </aside>
+  {%- endif -%}
 
   <nav class="post-nav">
     {%- if page.previous %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | escape | truncate: 34 }}</a>{% else %}<span></span>{% endif -%}

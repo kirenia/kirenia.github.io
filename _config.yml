@@ -32,6 +32,9 @@ footer_quote_year: 2025
 baseurl: "" # user pages (kirenia.github.io) are served from the root
 url: "https://githugs.lol" # the base hostname & protocol for your site
 
+repo_url: https://github.com/kirenia/kirenia.github.io
+repo_branch: main
+
 instagram_username: githugs_
 bluesky_username: githugs.bsky.social
 mastodon_username: githugs

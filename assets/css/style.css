@@ -458,7 +458,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 0.85rem;
+  gap: 0.6rem 0.9rem;
   margin-bottom: 2rem;
   font-family: var(--body-font);
   font-size: var(--fs-caption);
@@ -466,6 +466,20 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   text-transform: uppercase;
   color: var(--dim);
 }
+
+.post-meta .tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--card-edge);
+  box-shadow: 3px 3px 0 var(--card-edge);
+  background: var(--card-bg);
+  color: var(--fg);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.post-meta .tag:hover { color: var(--accent); transform: translate(-1px, -1px); }
 
 .post-content > :first-child { margin-top: 0; }
 
@@ -489,6 +503,17 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   line-height: 1.6;
   color: var(--dim);
 }
+
+.post-edit {
+  margin-top: 3rem;
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--line);
+  font-family: var(--body-font);
+  font-size: var(--fs-caption);
+  color: var(--dim);
+}
+
+.post-edit p { margin: 0; }
 
 .post-nav {
   display: flex;
@@ -563,6 +588,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 }
 
 .sticker--right { float: right; margin: 0.25rem 0 1rem 1.25rem; }
+
+.post-content .sticker { width: min(calc(var(--w) * 0.8), 32vw); }
 .sticker--left { float: left; margin: 0.25rem 1.25rem 1rem 0; }
 
 @media (prefers-reduced-motion: reduce) {
