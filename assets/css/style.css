@@ -85,6 +85,9 @@
     --head-font: var(--mono);
     --prompt: "> ";
     --cursor: inline;
+    /* Fira Code runs optically larger than Fira Sans, so the terminal side
+       takes body copy down a step to match the light side's weight */
+    --fs-body: 0.9375rem;
   }
 }
 
@@ -95,6 +98,7 @@
   --head-font: var(--mono);
   --prompt: "> ";
   --cursor: inline;
+  --fs-body: 0.9375rem;
 }
 
 /* a picked theme beats the system one */
@@ -514,6 +518,243 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 }
 
 .post-edit p { margin: 0; }
+
+/* the list ------------------------------------------------------------
+   one flat set of entries; the sorter restacks them in place */
+.reclist { margin: 0; }
+
+.rec-group { margin-top: 2.25rem; }
+.rec-group:first-child { margin-top: 1rem; }
+
+.rec-group__title {
+  margin: 0 0 0.85rem;
+  font-family: var(--head-font);
+  font-size: var(--fs-h3);
+}
+
+.rec-intro {
+  margin: -0.4rem 0 0.9rem;
+  font-size: var(--fs-caption);
+  color: var(--dim);
+}
+
+/* gap, not margins, so nothing collapses */
+.recs {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.rec { padding-left: 1.6rem; }
+
+.rec dt,
+.rec dd { margin: 0; }
+
+.rec dt {
+  position: relative;
+  line-height: 1.45;
+}
+
+/* the marker is the media type, hanging in the left padding */
+.rec dt .fa-solid {
+  position: absolute;
+  left: -1.6rem;
+  top: 0.3em;
+  width: 1em;
+  font-size: 0.85em;
+  text-align: center;
+  color: var(--dim);
+}
+
+.rec cite {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.rec dd {
+  margin-top: 0.1rem;
+  font-size: var(--fs-caption);
+  line-height: 1.45;
+  color: var(--dim);
+}
+
+.reclist a { color: var(--link); }
+
+/* unicode arrow, not an icon font, so it works before font awesome does */
+.reclist a[href^="http"]::after {
+  content: "\2197";
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--dim);
+}
+.reclist a:hover { color: var(--link-hover); }
+
+.reclist a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* the sorter --------------------------------------------------------- */
+
+.sorter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.75rem;
+  margin: 0 0 0.9rem;
+  font-family: var(--body-font);
+}
+
+.sorter + .sorter { margin-bottom: 2.5rem; }
+
+.sorter__label {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.sorter__search {
+  flex: 1 1 14rem;
+  max-width: 22rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: var(--fs-caption);
+}
+
+.sorter__search::placeholder { color: var(--dim); }
+
+.sorter__search:focus-visible {
+  outline: 2px solid var(--drac-cyan);
+  outline-offset: 2px;
+  border-color: var(--drac-cyan);
+}
+
+.rec-empty {
+  margin: 1rem 0;
+  color: var(--dim);
+}
+
+.sorter__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+}
+
+/* cyan so they read as controls, not tags. the pressed one sits in its shadow */
+.sorter button {
+  --ctl: var(--drac-cyan);
+
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--ctl);
+  box-shadow: 3px 3px 0 var(--ctl);
+  background: color-mix(in srgb, var(--ctl) 10%, var(--card-bg));
+  color: var(--fg);
+  font: inherit;
+  font-size: var(--fs-caption);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.sorter button:hover {
+  background: color-mix(in srgb, var(--ctl) 22%, var(--card-bg));
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ctl);
+}
+
+.sorter button[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--ctl) 32%, var(--card-bg));
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+.sorter button:focus-visible {
+  outline: 2px solid var(--ctl);
+  outline-offset: 2px;
+}
+
+
+.sorter__buttons { gap: 0.6rem 0.7rem; }
+
+/* needs javascript, so it stays hidden until the script runs */
+.sorter { display: none; }
+.js .sorter { display: flex; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sorter button { transition: none; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.item-note {
+  display: block;
+  font-size: var(--fs-caption);
+  color: var(--dim);
+  line-height: 1.45;
+}
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 2.5rem;
+  font-family: var(--body-font);
+}
+
+.toc__label {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* padded past the 24px WCAG 2.5.8 target minimum, and underlined so colour
+   is never the only thing marking a link (1.4.1) */
+.toc a {
+  display: inline-block;
+  padding: 0.3rem 0.1rem;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.toc a:hover { color: var(--accent); }
+
+.toc a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* an anchor should not land with its heading jammed against the viewport top */
+.post-content :is(h2, h3) { scroll-margin-top: 1.5rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 .post-nav {
   display: flex;
