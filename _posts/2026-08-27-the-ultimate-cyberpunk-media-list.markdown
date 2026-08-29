@@ -2,7 +2,7 @@
 layout: post
 title: "The Ultimate Cyberpunk Media List"
 date: 2026-08-27 09:00:00 -0600
-description: "Every book, film, show and game you have told me to get to. Almost none of it read yet, which is the point of a list."
+description: "Every book, film, show and game you have told me to get to."
 tags: [books, cyberpunk]
 sticker: neuromancer
 ---
@@ -162,7 +162,6 @@ It's here! The evergrowing list of recommedations. Most of these came from you! 
     </div>
     <div class="rec" data-title="horus rising" data-type="book" data-year="2006" data-author="Abnett, Dan" data-universe="warhammer 40,000">
       <dt><i class="fa-solid fa-book" aria-hidden="true"></i> Abnett, Dan. <cite>Horus Rising</cite>. 2006.</dt>
-      <dd>doing this one as an audiobook</dd>
     </div>
     <div class="rec" data-title="all tomorrows" data-type="book" data-year="2006" data-author="Kosemen, C.M." data-universe="">
       <dt><i class="fa-solid fa-book" aria-hidden="true"></i> Kosemen, C.M. <cite><a href="https://archive.org/download/book-all-tomorrows/book%20all%20tomorrows.pdf">All Tomorrows</a></cite>. 2006.</dt>
@@ -177,7 +176,7 @@ It's here! The evergrowing list of recommedations. Most of these came from you! 
     </div>
     <div class="rec" data-title="wool" data-type="book" data-year="2011" data-author="Howey, Hugh" data-universe="silo">
       <dt><i class="fa-solid fa-book" aria-hidden="true"></i> Howey, Hugh. <cite>Wool</cite>. 2011.</dt>
-      <dd>the self-published short. the omnibus novel came in 2012.</dd>
+      <dd><a href="https://www.writersdigest.com/be-inspired/how-hugh-howey-turned-his-self-published-story-wool-into-a-success-a-book-deal">the self-published short</a>. the omnibus novel came in 2012.</dd>
     </div>
     <div class="rec" data-title="peripheral" data-type="book" data-year="2014" data-author="Gibson, William" data-universe="gibson">
       <dt><i class="fa-solid fa-book" aria-hidden="true"></i> Gibson, William. <cite>The Peripheral</cite>. 2014.</dt>
@@ -211,8 +210,7 @@ It's here! The evergrowing list of recommedations. Most of these came from you! 
       <dt><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Vinge, Vernor. <cite><a href="https://edoras.sdsu.edu/~vinge/misc/singularity.html">The Coming Technological Singularity</a></cite>. 1993.</dt>
     </div>
     <div class="rec" data-title="“disneyland with the death penalty”" data-type="essay" data-year="1993" data-author="Gibson, William" data-universe="gibson">
-      <dt><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Gibson, William. <cite>&#8220;Disneyland with the Death Penalty&#8221;</cite>. 1993.</dt>
-      <dd>in Wired</dd>
+      <dt><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Gibson, William. <cite><a href="https://www.wired.com/1993/04/gibson-2/">&#8220;Disneyland with the Death Penalty&#8221;</a></cite>. 1993.</dt>
     </div>
     <div class="rec" data-title="declaration of the independence of cyberspace" data-type="essay" data-year="1996" data-author="Barlow, John Perry" data-universe="">
       <dt><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Barlow, John Perry. <cite><a href="https://www.eff.org/cyberspace-independence">A Declaration of the Independence of Cyberspace</a></cite>. 1996.</dt>
@@ -255,7 +253,6 @@ It's here! The evergrowing list of recommedations. Most of these came from you! 
     </div>
     <div class="rec" data-title="last angel of history" data-type="film" data-year="1996" data-author="" data-universe="">
       <dt><i class="fa-solid fa-film" aria-hidden="true"></i> <cite>The Last Angel of History</cite>. 1996.</dt>
-      <dd>a documentary, and the odd one out on this list on purpose</dd>
     </div>
     <div class="rec" data-title="fifth element" data-type="film" data-year="1997" data-author="" data-universe="">
       <dt><i class="fa-solid fa-film" aria-hidden="true"></i> <cite>The Fifth Element</cite>. 1997.</dt>
@@ -359,7 +356,6 @@ It's here! The evergrowing list of recommedations. Most of these came from you! 
     </div>
     <div class="rec" data-title="i have no mouth, and i must scream" data-type="game" data-year="1995" data-author="" data-universe="">
       <dt><i class="fa-solid fa-gamepad" aria-hidden="true"></i> <cite>I Have No Mouth, and I Must Scream</cite>. 1995.</dt>
-      <dd>yes, they made the Ellison story into a point-and-click adventure. Ellison worked on it.</dd>
     </div>
     <div class="rec" data-title="deus ex" data-type="game" data-year="2000" data-author="" data-universe="">
       <dt><i class="fa-solid fa-gamepad" aria-hidden="true"></i> <cite>Deus Ex</cite>. 2000.</dt>
