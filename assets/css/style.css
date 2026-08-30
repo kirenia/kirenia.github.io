@@ -689,6 +689,35 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   .sorter button { transition: none; }
 }
 
+/* on a phone the controls go full width so they're easy to hit */
+@media (max-width: 40rem) {
+  .sorter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  /* the column flips the main axis, so the row's flex-basis would set
+     height here. drop it and let the input be its natural height. */
+  .sorter__search {
+    flex: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .sorter__buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .sorter button {
+    width: 100%;
+    padding: 0.55rem 0.6rem;
+    text-align: center;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
