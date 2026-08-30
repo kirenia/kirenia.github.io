@@ -715,8 +715,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
     max-width: 28rem;
   }
 
-  /* five buttons, so the last one takes the empty half to itself */
-  .sorter__buttons button:last-child { grid-column: 1 / -1; }
+  /* the default sort gets the full width, wherever it sits in the row */
+  .sorter__buttons button[data-sort="type"] { grid-column: 1 / -1; }
 
   .sorter__search { max-width: 28rem; }
 

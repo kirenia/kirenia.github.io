@@ -24,11 +24,11 @@ Cyberpunk is a pile of stories about right now written by people decades before 
 <div class="sorter">
   <span class="sorter__label" id="sort-label">sort</span>
   <div class="sorter__buttons" role="group" aria-labelledby="sort-label">
-    <button type="button" data-sort="type" aria-pressed="true">media type</button>
-    <button type="button" data-sort="universe" aria-pressed="false">universe</button>
+    <button type="button" data-sort="year" aria-pressed="false">year</button>
     <button type="button" data-sort="author" aria-pressed="false">author</button>
     <button type="button" data-sort="title" aria-pressed="false">title</button>
-    <button type="button" data-sort="year" aria-pressed="false">year</button>
+    <button type="button" data-sort="universe" aria-pressed="false">universe</button>
+    <button type="button" data-sort="type" aria-pressed="true">media type (default)</button>
   </div>
 </div>
 
