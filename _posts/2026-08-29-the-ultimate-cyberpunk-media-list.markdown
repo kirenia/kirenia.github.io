@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Ultimate Cyberpunk Media List"
-date: 2026-08-29 18:38 -0600
+date: 2026-08-29 18:40:00 -0600
 description: "Every book, film, show and game you have told me to get to."
 tags: [books, cyberpunk]
 ---
