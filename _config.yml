@@ -15,6 +15,10 @@ footer_quote_by: Tim Berners-Lee
 footer_quote_cite: "This Is for Everyone: The Unfinished Story of the World Wide Web"
 footer_quote_year: 2025
 
+# without this, dates render in the build machine's timezone: mountain on
+# my laptop, UTC on github pages, so an evening post shows the wrong day
+timezone: America/Boise
+
 baseurl: "" # user pages (kirenia.github.io) are served from the root
 url: "https://githugs.lol" # the domain in CNAME, not the github.io one
 
