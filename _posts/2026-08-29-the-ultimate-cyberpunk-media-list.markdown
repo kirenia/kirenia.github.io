@@ -274,6 +274,10 @@ Cyberpunk is a pile of stories about right now written by people decades before 
     <div class="rec" data-title="tron: legacy" data-type="film" data-year="2010" data-author="" data-universe="">
       <dt><i class="fa-solid fa-film" aria-hidden="true"></i> <cite>Tron: Legacy</cite>. 2010.</dt>
     </div>
+    <div class="rec" data-title="oblivion" data-type="film" data-year="2013" data-author="" data-universe="">
+      <dt><i class="fa-solid fa-film" aria-hidden="true"></i> <cite>Oblivion</cite>. 2013.</dt>
+      <dd>not cyberpunk, but asking the Blade Runner question with the lights on</dd>
+    </div>
     <div class="rec" data-title="blade runner 2049" data-type="film" data-year="2017" data-author="" data-universe="blade runner">
       <dt><i class="fa-solid fa-film" aria-hidden="true"></i> <cite>Blade Runner 2049</cite>. 2017.</dt>
     </div>
