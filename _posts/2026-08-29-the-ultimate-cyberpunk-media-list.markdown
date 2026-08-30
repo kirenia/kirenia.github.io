@@ -388,3 +388,7 @@ It's here! The evergrowing list of recommedations. A lot of these came from you!
 </section>
 
 </div>
+
+<div class="note" markdown="1">
+This list is growing, so more is being added as I find resources. [Write me](mailto:githugs@proton.me) to correct something, or if you want something added.
+</div>
