@@ -1,14 +1,35 @@
-{%- comment -%}
-  usage: {% include sticker.html name="cat" class="sticker--right" %}
-  everything but `name` is optional and falls back to _data/stickers.yml.
-{%- endcomment -%}
-{%- assign meta = site.data.stickers | where: "name", include.name | first -%}
-{%- assign _file = meta.file | default: include.name -%}
-{%- unless _file contains "." -%}{%- assign _file = _file | append: ".svg" -%}{%- endunless -%}
-{%- assign _alt = include.alt | default: meta.alt | default: include.name -%}
-{%- assign _tilt = include.tilt | default: meta.tilt -%}
-{%- assign _w = include.width | default: meta.w -%}
-{%- assign _style = "" -%}
-{%- if _tilt %}{% assign _style = _style | append: "--tilt:" | append: _tilt | append: ";" %}{% endif -%}
-{%- if _w %}{% assign _style = _style | append: "--w:" | append: _w | append: ";" %}{% endif -%}
-<img class="sticker {{ include.class }}" src="{{ '/assets/img/stickers/' | append: _file | relative_url }}" alt="{{ _alt | escape }}" loading="lazy" width="{{ meta.nw | default: 100 }}" height="{{ meta.nh | default: 100 }}"{% if _style != "" %} style="{{ _style }}"{% endif %}>
+{%- comment -%} usage: {% include sticker.html name="cat" class="sticker--right"
+%} everything but `name` is optional and falls back to _data/stickers.yml. a
+name that isn't in that file draws nothing rather than a broken image. {%-
+endcomment -%} {%- assign meta = site.data.stickers | where: "name",
+include.name | first -%} {%- if meta -%} {%- assign _alt = include.alt |
+default: meta.alt | default: include.name -%} {%- assign _tilt = include.tilt |
+default: meta.tilt -%} {%- assign _w = include.width | default: meta.w -%} {%-
+assign _style = "" -%} {%- if _tilt %}{% assign _style = _style | append:
+"--tilt:" | append: _tilt | append: ";" %}{% endif -%} {%- if _w %}{% assign
+_style = _style | append: "--w:" | append: _w | append: ";" %}{% endif -%}
+<img
+  class="sticker {{ include.class }}"
+  src="{{ '/assets/img/stickers/' | append: meta.file | relative_url }}"
+  alt="{{ _alt | escape }}"
+  loading="lazy"
+  {%
+  if
+  meta.nw
+  and
+  meta.nh
+  %}
+  width="{{ meta.nw }}"
+  height="{{ meta.nh }}"
+  {%
+  endif
+  %}{%
+  if
+  _style
+  !=""
+  %}
+  style="{{ _style }}"
+  {%
+  endif
+  %} />
+{%- endif -%}

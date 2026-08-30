@@ -1,27 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# site settings.
+# jekyll does not reload this file while it's serving,
+# restart after touching anything in here.
 
 title: githugs(lol)
 email: githugs@proton.me
-description: >- # this means to ignore newlines until "baseurl:"
+description: >-
   Code, notes, and whatever else I'm building right now.
+
 # the line in the footer's third column
 footer_quote: >-
   We can restore the web as a tool for collaboration, creativity and
@@ -29,11 +14,13 @@ footer_quote: >-
 footer_quote_by: Tim Berners-Lee
 footer_quote_cite: "This Is for Everyone: The Unfinished Story of the World Wide Web"
 footer_quote_year: 2025
-baseurl: "" # user pages (kirenia.github.io) are served from the root
-url: "https://githugs.lol" # the base hostname & protocol for your site
 
-repo_url: https://github.com/kirenia/kirenia.github.io
-repo_branch: main
+baseurl: "" # user pages (kirenia.github.io) are served from the root
+url: "https://githugs.lol" # the domain in CNAME, not the github.io one
+
+# uncomment to put the "edit this post" links back under every post
+# repo_url: https://github.com/kirenia/kirenia.github.io
+# repo_branch: main
 
 instagram_username: githugs_
 bluesky_username: githugs.bsky.social
@@ -42,13 +29,11 @@ mastodon_username: githugs
 # the footer status line is pulled live from this omg.lol address
 omg_address: kire
 
-# Build settings
 # no theme gem: the layouts, includes and CSS in this repo are the theme.
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
-# Blog settings
 permalink: /:year/:month/:day/:title/
 
 # install scripts live in _scripts/ and get their own pages
@@ -56,8 +41,11 @@ collections:
   scripts:
     output: true
     permalink: /scripts/:name/
+
+# the first blank line ends the blurb shown on the home page cards
 excerpt_separator: "\n\n"
 
+# so posts and scripts don't have to name their layout in front matter
 defaults:
   - scope:
       path: ""
@@ -69,23 +57,3 @@ defaults:
       type: scripts
     values:
       layout: script
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

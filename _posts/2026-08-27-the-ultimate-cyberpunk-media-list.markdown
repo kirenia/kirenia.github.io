@@ -9,7 +9,7 @@ sticker: neuromancer
 
 <p class="subtitle">everything people have told me to read, watch and play</p>
 
-It's here! The evergrowing list of recommedations. Most of these came from you! If something is missing or you though of another cool thing to add, [send it over](mailto:githugs@proton.me) and I'll add it. Happy lore-ing!
+It's here! The evergrowing list of recommedations. A lot of these came from you! If something is missing or you thought of another cool thing to add, [send it over](mailto:githugs@proton.me) and I'll add it. Happy lore-ing!
 
 <div class="sorter">
   <label class="sorter__label" for="list-search">search</label>
