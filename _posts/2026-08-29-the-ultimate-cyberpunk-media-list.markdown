@@ -14,7 +14,7 @@ tags: [books, cyberpunk]
   {% include sticker.html name="irobot" tilt="-3deg" %}
 </div>
 
-This is a pile of stories about right now written by people decades before it existed. Some of them got uncomfortably close. This is the running list of the novels it grew from, the films everyone quotes, and the shows + games that came after.
+Most of this was written before the world it describes existed. Some of it landed uncomfortbly close. Here's the running list of cyberpunk including the novels it grew from, the films everyone quotes, and the shows + games that came after.
 
 <div class="sorter">
   <label class="sorter__label" for="list-search">search</label>
