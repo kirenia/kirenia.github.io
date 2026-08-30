@@ -4,10 +4,15 @@ title: "The Ultimate Cyberpunk Media List"
 date: 2026-08-29 18:38 -0600
 description: "Every book, film, show and game you have told me to get to."
 tags: [books, cyberpunk]
-sticker: neuromancer
 ---
 
 <p class="subtitle">everything people have told me to read, watch and play</p>
+
+<div class="sticker-stack" aria-hidden="true">
+  {% include sticker.html name="neuromancer" tilt="-8deg" %}
+  {% include sticker.html name="dune" tilt="5deg" %}
+  {% include sticker.html name="irobot" tilt="-3deg" %}
+</div>
 
 It's here! The evergrowing list of recommedations. A lot of these came from you! If something is missing or you thought of another cool thing to add, [send it over](mailto:githugs@proton.me) and I'll add it. Happy lore-ing!
 
