@@ -14,7 +14,7 @@ tags: [books, cyberpunk]
   {% include sticker.html name="irobot" tilt="-3deg" %}
 </div>
 
-Most cyberpunk stories were written before the world they describe existed. Some of it landed uncomfortbly close. Here's the running list of cyberpunk including the novels it grew from, the films everyone quotes, and the shows + games that came after.
+Most cyberpunk stories were written before the world they describe existed, and some of it landed uncomfortbly close. Here's the running list of cyberpunk including the novels it grew from, the films everyone quotes, and the shows + games that came after.
 
 <div class="sorter">
   <label class="sorter__label" for="list-search">search</label>
