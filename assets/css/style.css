@@ -607,9 +607,6 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   font-family: var(--body-font);
 }
 
-/* never let the controls wrap around a floated sticker */
-.sorter { clear: right; }
-
 .sorter + .sorter { margin-bottom: 2.5rem; }
 
 .sorter__label {
@@ -698,6 +695,8 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
+    /* no room to sit beside the pile at this width */
+    clear: right;
   }
 
   /* the column flips the main axis, so the row's flex-basis would set
@@ -705,17 +704,21 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   .sorter__search {
     flex: none;
     width: 100%;
-    max-width: none;
   }
 
+  /* two columns, but capped so they don't stretch into slabs on a big
+     phone or an unfolded foldable */
   .sorter__buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.7rem;
+    max-width: 28rem;
   }
 
   /* five buttons, so the last one takes the empty half to itself */
   .sorter__buttons button:last-child { grid-column: 1 / -1; }
+
+  .sorter__search { max-width: 28rem; }
 
   .sorter button {
     width: 100%;
@@ -882,7 +885,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   margin: 0;
 }
 
-.sticker-stack .sticker + .sticker { margin-top: -1.4rem; }
+.sticker-stack .sticker + .sticker { margin-top: -2.4rem; }
 
 .sticker-stack .sticker:nth-child(1) { z-index: 4; }
 .sticker-stack .sticker:nth-child(2) { z-index: 3; margin-left: 0.6rem; }
