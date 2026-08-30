@@ -14,7 +14,7 @@ tags: [books, cyberpunk]
   {% include sticker.html name="irobot" tilt="-3deg" %}
 </div>
 
-Cyberpunk is a pile of stories about right now written by people decades before it existed. Some of them got uncomfortably close. This is the running list of the novels it grew from, the films everyone quotes, and the shows + games that came after.
+This is a pile of stories about right now written by people decades before it existed. Some of them got uncomfortably close. This is the running list of the novels it grew from, the films everyone quotes, and the shows + games that came after.
 
 <div class="sorter">
   <label class="sorter__label" for="list-search">search</label>
