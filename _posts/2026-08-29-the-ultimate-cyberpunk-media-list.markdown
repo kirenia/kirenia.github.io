@@ -2,7 +2,7 @@
 layout: post
 title: "The Ultimate Cyberpunk Media List"
 date: 2026-08-29 18:40:00 -0600
-description: "Every book, film, show and game you have told me to get to."
+description: "A running list of the cyberpunk books, films, shows and games worth knowing, sortable by year, author, universe or media type."
 tags: [books, cyberpunk]
 ---
 
@@ -14,7 +14,7 @@ tags: [books, cyberpunk]
   {% include sticker.html name="irobot" tilt="-3deg" %}
 </div>
 
-It's here! The evergrowing list of recommedations. Some of these are faves of mine, but a lot of these came from you! If something is missing or you thought of another cool thing to add, [send it over](mailto:githugs@proton.me) and I'll add it. Happy lore-ing!
+Cyberpunk is a pile of stories about right now written by people decades before it existed. Some of them got uncomfortably close. This is the running list of the novels it grew from, the films everyone quotes, and the shows + games that came after.
 
 <div class="sorter">
   <label class="sorter__label" for="list-search">search</label>
@@ -387,4 +387,8 @@ It's here! The evergrowing list of recommedations. Some of these are faves of mi
   </dl>
 </section>
 
+</div>
+
+<div class="note" markdown="1">
+Some of these are faves of mine, but a lot of these came from you! If something is missing or you thought of another cool thing to add, [send it over](mailto:githugs@proton.me) and I'll add it. Happy lore-ing!
 </div>
