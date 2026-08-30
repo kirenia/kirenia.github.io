@@ -607,6 +607,9 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   font-family: var(--body-font);
 }
 
+/* never let the controls wrap around a floated sticker */
+.sorter { clear: right; }
+
 .sorter + .sorter { margin-bottom: 2.5rem; }
 
 .sorter__label {
@@ -707,9 +710,12 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
   .sorter__buttons {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0.7rem;
   }
+
+  /* five buttons, so the last one takes the empty half to itself */
+  .sorter__buttons button:last-child { grid-column: 1 / -1; }
 
   .sorter button {
     width: 100%;
@@ -883,6 +889,11 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .sticker-stack .sticker:nth-child(3) { z-index: 2; margin-left: -0.5rem; }
 
 .sticker-stack .sticker:hover { z-index: 5; }
+
+@media (max-width: 40rem) {
+  .post-content .sticker-stack .sticker { width: min(calc(var(--w) * 0.5), 20vw); }
+  .sticker-stack .sticker + .sticker { margin-top: -2.2rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .sticker, .card { transition: none; }

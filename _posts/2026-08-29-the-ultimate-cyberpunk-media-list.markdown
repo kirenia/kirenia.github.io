@@ -17,19 +17,19 @@ tags: [books, cyberpunk]
 It's here! The evergrowing list of recommedations. A lot of these came from you! If something is missing or you thought of another cool thing to add, [send it over](mailto:githugs@proton.me) and I'll add it. Happy lore-ing!
 
 <div class="sorter">
-  <label class="sorter__label" for="list-search">search</label>
-  <input type="search" id="list-search" class="sorter__search" placeholder="title, author, year..." autocomplete="off">
+  <span class="sorter__label" id="sort-label">sort</span>
+  <div class="sorter__buttons" role="group" aria-labelledby="sort-label">
+    <button type="button" data-sort="year" aria-pressed="false">year</button>
+    <button type="button" data-sort="author" aria-pressed="false">author</button>
+    <button type="button" data-sort="title" aria-pressed="false">title</button>
+    <button type="button" data-sort="universe" aria-pressed="false">universe</button>
+    <button type="button" data-sort="type" aria-pressed="true">media type (default)</button>
+  </div>
 </div>
 
 <div class="sorter">
-  <span class="sorter__label" id="sort-label">sort</span>
-  <div class="sorter__buttons" role="group" aria-labelledby="sort-label">
-    <button type="button" data-sort="type" aria-pressed="true">media type</button>
-    <button type="button" data-sort="universe" aria-pressed="false">universe</button>
-    <button type="button" data-sort="author" aria-pressed="false">author</button>
-    <button type="button" data-sort="title" aria-pressed="false">title</button>
-    <button type="button" data-sort="year" aria-pressed="false">year</button>
-  </div>
+  <label class="sorter__label" for="list-search">search</label>
+  <input type="search" id="list-search" class="sorter__search" placeholder="title, author, year..." autocomplete="off">
 </div>
 
 <p class="visually-hidden" role="status" id="sort-status"></p>
