@@ -867,6 +867,7 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 }
 
 .sticker--right { float: right; margin: 0.25rem 0 1rem 1.25rem; }
+.sticker--left { float: left; margin: 0.25rem 1.25rem 1rem 0; }
 
 .post-content .sticker { width: min(calc(var(--w) * 0.8), 32vw); }
 
