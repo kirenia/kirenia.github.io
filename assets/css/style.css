@@ -861,12 +861,13 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 
 .post-content .sticker { width: min(calc(var(--w) * 0.8), 32vw); }
 
-/* a little pile of covers instead of one sticker. they overlap, the one
-   on top is the one in front, and hovering pulls a cover out of the pile */
+/* a little pile of covers instead of one sticker. stacked down the page,
+   overlapping, and hovering pulls one out of the pile */
 .sticker-stack {
   float: right;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   margin: 0.25rem 0 1rem 1.25rem;
 }
 
@@ -875,18 +876,13 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   margin: 0;
 }
 
-.sticker-stack .sticker + .sticker { margin-left: -1.6rem; }
+.sticker-stack .sticker + .sticker { margin-top: -1.4rem; }
 
 .sticker-stack .sticker:nth-child(1) { z-index: 4; }
-.sticker-stack .sticker:nth-child(2) { z-index: 3; margin-top: 0.5rem; }
-.sticker-stack .sticker:nth-child(3) { z-index: 2; margin-top: 1rem; }
+.sticker-stack .sticker:nth-child(2) { z-index: 3; margin-left: 0.6rem; }
+.sticker-stack .sticker:nth-child(3) { z-index: 2; margin-left: -0.5rem; }
 
 .sticker-stack .sticker:hover { z-index: 5; }
-
-@media (max-width: 40rem) {
-  .sticker-stack .sticker + .sticker { margin-left: -1.9rem; }
-}
-.sticker--left { float: left; margin: 0.25rem 1.25rem 1rem 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .sticker, .card { transition: none; }
