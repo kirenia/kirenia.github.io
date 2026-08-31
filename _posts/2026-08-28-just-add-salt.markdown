@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Hash It Out"
+title: "Just Add Salt"
 date: 2026-08-28
-description: "Storing a password as-is is never the move, even for a school project."
+description: "Storing a password as-is is never the move. Salt helps."
 tags: [api]
 ---
 
