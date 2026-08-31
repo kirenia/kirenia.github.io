@@ -1,34 +1,25 @@
 ---
 layout: post
-title: "Four Things My API Yelled at Me About"
+title: "Hash It Out"
 date: 2026-08-28
-description: "The stuff I forget every single deploy, and the fixes I keep bookmarking then losing again."
+description: "Storing a password as-is is never the move, even for a school project."
 tags: [api]
 ---
 
-<p class="subtitle">stuff I forget every time, no matter how many times I've deployed</p>
+<p class="subtitle">bcrypt, salt, all the things</p>
 
 ![desk setup with a neon cyberpunk scene on the monitor above stacked books](/assets/img/posts/desktop.jpg)
 
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=282a36)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=f8f8f2)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=f8f8f2)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=f8f8f2)
-![Heroku](https://img.shields.io/badge/Heroku-430098?style=flat-square&logo=heroku&logoColor=f8f8f2)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=f8f8f2)
+I just added authentication to Cyberpunk Library (and it's now called Media Log, idk what happened there). The part that matters most is what happens to the password the second it hits my server. Pow.
 
-I just put together a small MERN app for tracking books, movies, and games called [Cyberpunk Library](https://cyberpunk-library.vercel.app). Nothing fancy, but deploying it reminded me of the same handful of things that trip me up basically every time, no matter how many times I do this.
+It never gets stored as-is. Ever.
 
-By the way nobody remembers all of this cold, and that's what keeps me motivated. We're all on Stack Overflow at some point (at least I am!). Here's four things I tripped on:
+**Hashing isn't encryption.** Encryption is reversible, if you have the key, you get the original text back. Hashing isn't. A password goes through a hash function and comes out as a fixed-length string that can't be turned back into the original. My server never needs to "read" your password again, it only needs to check if a new attempt produces the same hash as the one on file.
 
-**1. Env vars have to actually be gitignored.** My connection string has a real username and password sitting in it. It goes in `.env`, and `.env` goes in `.gitignore` _before_ the first commit. I've made this mistake before, and trying to clean up later can be messy because even after it's "clean" it's in the history whether you like it or not.
+**Salt stops the shortcut.** If two people use the same password sans-salt, their hashes would look identical. That's a problem because attackers keep giant precomputed tables of common password hashes ("rainbow tables") and they can look up a match instantly. Salt is random data mixed in before hashing so the same password produces a completely different hash for every user. This is where bcrypt comes in handy.
 
-**2. Heroku won't touch your `.env` file.** I know this and I _still_ forget it. Locally, everything just works off `.env`. On Heroku, none of that exists unless you set it directly with `heroku config:set`. If you skip it the app crashes on boot with a Mongoose error that doesn't obviously point back to "you forgot the config var."
+**The hook does the work.** In my user model, I added a `pre('save')` hook that hashes the password before it's written to the database, so it doesn't matter where in my code a user gets created, the hashing always happens. I don't have to remember to call it manually every time, which is exactly the kind of thing I'd forget. Even if I did it a million times.
 
-**3. Atlas blocks everything by default.** This one's a good instinct even when it's annoying. Atlas only lets connections through from IPs you've explicitly allowed. Heroku dynos don't have a fixed IP, so the fix is allowing `0.0.0.0/0` which kinda sounds like turning security off, but it's not. The real gatekeeping is still your database username and password. The IP list is just one more layer, and it's the layer that has to flex for cloud hosting to work at all.
+**Comparing later matters.** Login hashes the password the user just typed and compares that new hash to the one already saved. `bcrypt.compare()` does it in a way that resists timing attacks, which is not something you want to try to DIY.
 
-**4. CORS errors are not the browser's fault.** It reads that way in the moment, a bit dramatic; but it's actually the browser refusing to let some other site quietly read your API using someone else's saved session. Adding `cors()` on your Express server is you telling the browser "yes, other origins are allowed to talk to me," which is something you want since your frontend and your API live on two different URLs.
-
-None of this is hard once you've hit it. It's just easy to forget between projects. I'm considering implementing a system that consists of a ridiculous assortment of sticky notes with each reminder stuck to my monitors so that I can pluck them off as I complete each step. I also might consider integrating this little API into my actual Ultimate Cyberpunk Media List for management. Who knows.
-
-Anyway, thanks for reading!
+Ok so none of this is exotic. It's standard practice on literally every serious app of whatever size. The habit that matters is doing it by default so that it's already muscle memory when it needs to count!
