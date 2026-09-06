@@ -28,7 +28,7 @@ url: "https://githugs.lol" # the domain in CNAME, not the github.io one
 
 instagram_username: githugs_
 bluesky_username: githugs.bsky.social
-mastodon_username: githugs
+patreon_username: githugs
 
 # the footer status line is pulled live from this omg.lol address
 omg_address: kire

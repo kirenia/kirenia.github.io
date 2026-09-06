@@ -26,47 +26,7 @@
     })();
   </script>
 
-  <script>
-    // jack in to the terminal, jack out to daylight
-    (function () {
-      var btn = document.querySelector("[data-theme-toggle]");
-      if (!btn) return;
-      var root = document.documentElement;
-      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-      // no pick yet means we're riding the system setting
-      function isDark() {
-        return root.dataset.theme ? root.dataset.theme === "dark" : prefersDark.matches;
-      }
-
-      function label() {
-        var on = isDark();
-        btn.textContent = on ? "jack-out" : "jack-in";
-        btn.setAttribute("aria-pressed", on ? "true" : "false");
-        btn.setAttribute("aria-label", on ? "jack out to light mode" : "jack in to the terminal");
-      }
-
-      btn.addEventListener("click", function () {
-        var next = isDark() ? "light" : "dark";
-        root.dataset.theme = next;
-        try { localStorage.setItem("theme", next); } catch (e) {}
-        label();
-      });
-
-      function onSchemeChange() {
-        if (!root.dataset.theme) label();
-      }
-
-      // addListener is the pre-2020 safari spelling
-      if (prefersDark.addEventListener) {
-        prefersDark.addEventListener("change", onSchemeChange);
-      } else if (prefersDark.addListener) {
-        prefersDark.addListener(onSchemeChange);
-      }
-
-      label();
-    })();
-  </script>
+  <script src="{{ '/assets/js/jack.js' | relative_url }}" defer></script>
   <script>document.documentElement.className += " js";</script>
 
   <script>
@@ -93,8 +53,8 @@
         ].join(" ").toLowerCase();
       });
 
-      var TYPE_LABEL = { book: "books", essay: "essays and manifestos", film: "films",
-                         tv: "tv and anime", game: "games", audio: "audio" };
+      var TYPE_LABEL = { book: "Books", essay: "Essays and Manifestos", film: "Films",
+                         tv: "TV and Anime", game: "Games", audio: "Audio" };
       var TYPE_ORDER = ["book", "essay", "film", "tv", "game", "audio"];
 
       function year(r) {

@@ -8,7 +8,7 @@ tags: [jekyll, indieweb]
 
 I've shipped MERN apps, iOS apps, WordPress rebuilds, and Docker setups that haunt my dreams (no joke). I can use frameworks, but I wanted something simpler for myself. This site is hand-written HTML, one CSS file, one small JavaScript file, and Jekyll to stitch the pages together. Even the newest dev can understand every line in the source code.
 
-## the whole stack fits in a sentence
+## The Whole Stack Fits in a Sentence
 
 - **Jekyll** for the templates and the blog
 - **Semantic HTML** with the headings in order
@@ -20,7 +20,7 @@ I've shipped MERN apps, iOS apps, WordPress rebuilds, and Docker setups that hau
 
 Total dependencies: Jekyll and a font. Jekyll only gets a pass because it has one job: eats Markdown and spits out HTML; and if it was gone tomorrow, the output is still plain HTML sitting in a folder. Nothing about the site depends on Jekyll continuing to exist.
 
-## the case for "boring"
+## The Case for "Boring"
 
 Most frameworks have a shelf life, and it's frustrating when projects from 2019 don't build anymore because a dependency of a dependency changed its API. Meanwhile, [HTML from the 90s still renders](https://info.cern.ch/hypertext/WWW/TheProject.html). I kinda want this site to live forever-ish, so I picked the only stack that has already proven it can survive decades.
 
@@ -32,7 +32,7 @@ Writing it by hand also made me better at the part of web dev that frameworks le
 
 And, okay, it's a little bit political. The web was supposed to be a place you could build on not a place you rent. A hand-coded site on a domain you own is the smallest possible version of that idea. Every framework and platform adds a layer between you and the thing you made and I wanted zero layers.
 
-## what I gave up, and when I still reach for a framework
+## What I Gave Up, and When I Still Reach for a Framework
 
 I'm not going to pretend it's free. There's no component reuse, so there's some copy-paste, but _Jekyll includes_ cover most of it. Without a hot-reload I have to save/refresh a lot, it's fine. No client-side routing means every page is a full load, but every page is also about 6kb so nobody notices. And if I wanted a search box or a comment system I'd have to actually think about it instead of just installing it. ALl in all I gave up some developer convenience for a site that will outlive every framework currently on npm, and I'll take that trade every time.
 

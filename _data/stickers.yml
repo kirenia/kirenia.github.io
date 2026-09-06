@@ -99,3 +99,10 @@
   nh: 300
   tilt: -6deg
   w: 7rem
+- name: flashbang
+  file: flashbang.jpg
+  alt: a flashbang going off
+  nw: 1280
+  nh: 720
+  tilt: -5deg
+  w: 9rem

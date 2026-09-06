@@ -1,53 +1,25 @@
 <ul class="social-media-list">
   {%- if site.instagram_username -%}
   <li>
-    <a
-      href="https://instagram.com/{{ site.instagram_username | cgi_escape | escape }}"
-      rel="me noopener noreferrer"
-      title="instagram"
-      target="_blank"
-      ><svg class="svg-icon"><use href="#instagram"></use></svg
-      ><span class="username">{{ site.instagram_username | escape }}</span></a
-    >
+    <a href="https://instagram.com/{{ site.instagram_username | cgi_escape | escape }}" rel="me noopener noreferrer" title="instagram" target="_blank"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="username">{{ site.instagram_username | escape }}</span></a>
   </li>
-  {%- endif -%} {%- if site.bluesky_username -%}
+  {%- endif -%}
+  {%- if site.bluesky_username -%}
   <li>
-    <a
-      href="https://bsky.app/profile/{{ site.bluesky_username | cgi_escape | escape }}"
-      rel="me noopener noreferrer"
-      title="bluesky"
-      target="_blank"
-      ><svg class="svg-icon"><use href="#bluesky"></use></svg
-      ><span class="username">{{ site.bluesky_username | escape }}</span></a
-    >
+    <a href="https://bsky.app/profile/{{ site.bluesky_username | cgi_escape | escape }}" rel="me noopener noreferrer" title="bluesky" target="_blank"><i class="fa-brands fa-bluesky" aria-hidden="true"></i><span class="username">{{ site.bluesky_username | escape }}</span></a>
   </li>
-  {%- endif -%} {%- if site.mastodon_username -%}
+  {%- endif -%}
+  {%- if site.patreon_username -%}
   <li>
-    <a
-      href="https://mastodon.social/@{{ site.mastodon_username | cgi_escape | escape }}"
-      rel="me noopener noreferrer"
-      title="mastodon"
-      target="_blank"
-      ><svg class="svg-icon"><use href="#mastodon"></use></svg
-      ><span class="username">{{ site.mastodon_username | escape }}</span></a
-    >
+    <a href="https://www.patreon.com/{{ site.patreon_username | cgi_escape | escape }}" rel="me noopener noreferrer" title="patreon" target="_blank"><i class="fa-brands fa-patreon" aria-hidden="true"></i><span class="username">{{ site.patreon_username | escape }}</span></a>
   </li>
-  {%- endif -%} {%- if site.email -%}
+  {%- endif -%}
+  {%- if site.email -%}
   <li>
-    <a class="u-email" href="mailto:{{ site.email }}" title="email"
-      ><svg class="svg-icon"><use href="#envelope"></use></svg
-      ><span class="username">email</span></a
-    >
+    <a class="u-email" href="mailto:{{ site.email }}" title="email"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="username">email</span></a>
   </li>
   {%- endif -%}
   <li>
-    <a
-      href="{{ '/feed.xml' | relative_url }}"
-      title="rss"
-      target="_blank"
-      rel="noopener noreferrer"
-      ><svg class="svg-icon"><use href="#rss"></use></svg
-      ><span class="username">rss</span></a
-    >
+    <a href="{{ '/feed.xml' | relative_url }}" title="rss" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-rss" aria-hidden="true"></i><span class="username">rss</span></a>
   </li>
 </ul>

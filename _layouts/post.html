@@ -13,17 +13,10 @@ layout: default
   </div>
 
   <div class="post-content">
-    {%- if page.sticker and content contains "</p>" -%}
-      {%- assign _first = content | split: "</p>" | first | append: "</p>" -%}
-      {{ _first }}
+    {%- if page.sticker -%}
       {% include sticker.html name=page.sticker class="sticker--right" tilt=page.sticker_tilt %}
-      {{ content | remove_first: _first }}
-    {%- else -%}
-      {%- if page.sticker -%}
-        {% include sticker.html name=page.sticker class="sticker--right" tilt=page.sticker_tilt %}
-      {%- endif -%}
-      {{ content }}
     {%- endif -%}
+    {{ content }}
   </div>
 
   {%- if site.repo_url -%}

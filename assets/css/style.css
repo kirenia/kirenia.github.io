@@ -57,6 +57,7 @@
   --card-tint: 28%;
   --body-font: var(--sans);
   --head-font: var(--sans);
+  --head-weight: 700;
   --prompt: "";
   --cursor: none;
 
@@ -86,8 +87,16 @@
     --prompt: "> ";
     --cursor: inline;
     /* Fira Code runs optically larger than Fira Sans, so the terminal side
-       takes body copy down a step to match the light side's weight */
-    --fs-body: 0.9375rem;
+       takes body copy — and the headings above it — down a step to match the
+       light side's weight */
+    --fs-body: 0.875rem;     /* 14px */
+    --fs-lead: 1.0625rem;    /* 17px */
+    --fs-h3: 1.1875rem;      /* 19px */
+    --fs-h2: 1.375rem;       /* 22px — still over WCAG's large-text threshold */
+    --fs-h1: 1.75rem;        /* 28px */
+    /* mono bold sits heavier than sans bold; 600 is a weight head.html
+       actually loads, so the browser never has to fake the slimmer cut */
+    --head-weight: 600;
   }
 }
 
@@ -98,7 +107,12 @@
   --head-font: var(--mono);
   --prompt: "> ";
   --cursor: inline;
-  --fs-body: 0.9375rem;
+  --fs-body: 0.875rem;
+  --fs-lead: 1.0625rem;
+  --fs-h3: 1.1875rem;
+  --fs-h2: 1.375rem;
+  --fs-h1: 1.75rem;
+  --head-weight: 600;
 }
 
 /* a picked theme beats the system one */
@@ -165,10 +179,20 @@ body {
 
 ::selection { background: var(--accent); color: var(--bg); }
 
+/* headings are written in normal casing and lowercased here, so the markup
+   stays readable to screen readers, search and anyone copying text */
+h1, h2, h3, h4,
+.card__title,
+.reclist__group,
+.rec-group__title {
+  text-transform: lowercase;
+}
+
 h1, h2, h3, h4 {
   /* a heading always starts on a clean line, never beside a sticker */
   clear: both;
   font-family: var(--head-font);
+  font-weight: var(--head-weight);
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin: 2rem 0 0.75rem;
@@ -869,6 +893,11 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
 .sticker--right { float: right; margin: 0.25rem 0 1rem 1.25rem; }
 .sticker--left { float: left; margin: 0.25rem 1.25rem 1rem 0; }
 
+/* a floated sticker only pushes what comes after it, so it leads the post
+   and the intro wraps around it */
+.post-content > .sticker { margin-top: 0; }
+.post-content > .sticker + * { margin-top: 0; }
+
 .post-content .sticker { width: min(calc(var(--w) * 0.8), 32vw); }
 
 /* a little pile of covers instead of one sticker. stacked down the page,
@@ -1027,11 +1056,11 @@ th, td { border-bottom: 1px solid var(--line); padding: 0.5rem 0.6rem; text-alig
   white-space: nowrap;
 }
 
-.svg-icon {
-  width: 20px;
-  height: 20px;
+.social-media-list i {
   display: block;
-  fill: currentColor;
+  width: 20px;
+  font-size: 20px;
+  text-align: center;
 }
 
 @media (max-width: 40rem) {
