@@ -101,7 +101,3 @@ Search the same part names at whichever of these ships to you. Local first, alwa
 - [Seeed Studio](https://www.seeedstudio.com)
 - [Tindie](https://www.tindie.com)
 - [AliExpress](https://www.aliexpress.com) - cheapest, check reviews
-
-## Next
-
-The [build guide]({% post_url 2026-08-18-cyberdeck-build-guide %}) puts these parts together step by step. Free forever.
