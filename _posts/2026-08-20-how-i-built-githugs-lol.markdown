@@ -6,7 +6,7 @@ description: "I can do frameworks, but for my own site I wanted something old sc
 tags: [jekyll, indieweb]
 ---
 
-I've shipped MERN apps, iOS apps, WordPress rebuilds, and Docker setups that haunt my dreams (no joke). I can use frameworks, but I wanted something simpler for myself. This site is hand-written HTML, one CSS file, one small JavaScript file, and Jekyll to stitch the pages together. Even the newest dev can understand every line in the source code.
+I've shipped MERN apps, iOS apps, WordPress rebuilds, and Docker setups that haunt my dreams (no joke). I can use frameworks, but I wanted something simpler for myself. This site is hand-written HTML, one CSS file, a little JavaScript, and Jekyll to stitch the pages together. Even the newest dev can understand every line in the source code.
 
 ## The Whole Stack Fits in a Sentence
 
@@ -15,10 +15,10 @@ I've shipped MERN apps, iOS apps, WordPress rebuilds, and Docker setups that hau
 - **Fira Code** for the dark console mode
 - **Fira Sans** for light mode
 - **The Dracula palette** my favorite colors
-- **jack.js** a tiny JS file that toggles "neon" mode
+- **jack.js** a tiny JS file that toggles light/dark
 - **GitHub Pages** for hosting
 
-Total dependencies: Jekyll and a font. Jekyll only gets a pass because it has one job: eats Markdown and spits out HTML; and if it was gone tomorrow, the output is still plain HTML sitting in a folder. Nothing about the site depends on Jekyll continuing to exist.
+Total dependencies: Jekyll, a font, and Font Awesome for a handful of icons. Jekyll only gets a pass because it has one job: eats Markdown and spits out HTML; and if it was gone tomorrow, the output is still plain HTML sitting in a folder. Nothing about the site depends on Jekyll continuing to exist.
 
 ## The Case for "Boring"
 
@@ -34,6 +34,6 @@ And, okay, it's a little bit political. The web was supposed to be a place you c
 
 ## What I Gave Up, and When I Still Reach for a Framework
 
-I'm not going to pretend it's free. There's no component reuse, so there's some copy-paste, but _Jekyll includes_ cover most of it. Without a hot-reload I have to save/refresh a lot, it's fine. No client-side routing means every page is a full load, but every page is also about 6kb so nobody notices. And if I wanted a search box or a comment system I'd have to actually think about it instead of just installing it. ALl in all I gave up some developer convenience for a site that will outlive every framework currently on npm, and I'll take that trade every time.
+I'm not going to pretend it's free. There's no component reuse, so there's some copy-paste, but _Jekyll includes_ cover most of it. Without a hot-reload I have to save/refresh a lot, it's fine. No client-side routing means every page is a full load, but no page here breaks 40kb so nobody notices. And when I wanted a search box I had to actually think about it instead of just installing it, which is how it ended up being about ten lines that filter a list already sitting in the page. ALl in all I gave up some developer convenience for a site that will outlive every framework currently on npm, and I'll take that trade every time.
 
 None of this means I'm anti-framework of course. If a client needs a CMS their team can edit, they get WordPress. If a job needs React, I write React. Skipping frameworks on my own site is a requirements decision, and this site's requirements are permanence, ownership, and simplicity. Right click & view source if you must. Happy coding!
