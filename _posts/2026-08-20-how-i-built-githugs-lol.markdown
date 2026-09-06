@@ -24,7 +24,7 @@ Total dependencies: Jekyll, a font, and Font Awesome for a handful of icons. Jek
 
 Most frameworks have a shelf life, and it's frustrating when projects from 2019 don't build anymore because a dependency of a dependency changed its API. Meanwhile, [HTML from the 90s still renders](https://info.cern.ch/hypertext/WWW/TheProject.html). I kinda want this site to live forever-ish, so I picked the only stack that has already proven it can survive decades.
 
-There's also a fairness thing I couldn't get past. Frameworks ships a runtime to the browser so that my developer experience is nicer. Nice to have for big projects, but this site is not that. My site's pages are a few kilobytes of HTML and CSS, and they load instantly on the cheapest phone on the slowest connection. That matters to me because I test everything on a Raspberry Pi 3 and I want it to work there too.
+There's also a fairness thing I couldn't get past. Frameworks ships a runtime to the browser so that my developer experience is nicer. Nice to have for big projects, but this site is not that. My site's pages are just HTML and CSS, and they load instantly on the cheapest phone on the slowest connection. That matters to me because I test everything on a Raspberry Pi 3 and I want it to work there too.
 
 I also just love that you can view source. I learned to code by right-clicking on websites and reading what was there, and frameworks kind of killed that. A modern site's source is a `<div id="root">` and a minified bundle or something. This one is readable top to bottom so if some kid in 2036 wants to know how it works, they can just look.
 
