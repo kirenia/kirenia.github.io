@@ -13,4 +13,4 @@ It's a growing personal collection of things I am building, like cyberdecks and 
 ![Markdown](https://img.shields.io/badge/Markdown-282a36?style=flat-square&logo=markdown&logoColor=f8f8f2)
 ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-282a36?style=flat-square&logo=githubpages&logoColor=bd93f9)
 
-_created by kire for wdv463_
+_for posterity_
